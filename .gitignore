@@ -1,0 +1,26 @@
+# --- SENSITIVE DATA ---
+# This is the most important part to protect your Spotify and Gemini keys
+.env
+.env.local
+.env.*.local
+
+# --- PYTHON (Server) ---
+server/venv/
+server/.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# --- NODE.JS (Client) ---
+client/node_modules/
+client/dist/
+client/dist-ssr/
+*.local
+
+# --- IDE & SYSTEM ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
