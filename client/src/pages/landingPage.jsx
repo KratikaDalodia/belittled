@@ -1,5 +1,6 @@
 import React from 'react';
 
+const LOGIN_URL = "https://belittled.onrender.com/login";
 const LandingPage = () => {
   return (
     // Changed h-screen to min-h-screen to prevent content cutoff on small devices
@@ -39,7 +40,7 @@ const LandingPage = () => {
 
         {/* Spotify Button - Responsive width/padding */}
         <a 
-          href="http://127.0.0.1:8000/login" 
+          href={LOGIN_URL} 
           className="w-full max-w-[280px] sm:w-auto flex items-center justify-center gap-3 bg-[#1DB954] hover:bg-[#1ed760] text-black font-bold py-4 px-8 md:px-10 rounded-full transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-green-500/40 no-underline"
         >
           <svg className="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="currentColor">
