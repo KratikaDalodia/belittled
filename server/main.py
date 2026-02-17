@@ -102,8 +102,8 @@ async def get_stats(token: str):
             ai_roast = ""
             try:    
                 prompt = f"""
-                Savage music roast for: {', '.join(artist_names)}. 
-                Their genres are: {', '.join(genres)}.
+                Savage music roast for user whose top artist: {', '.join(artist_names)}. 
+                and top tracks are: {', '.join([t['name'] for t in tracks_res.json().get('items', [])[:5]])}.
                 3 witty sentences max. No emojis.
                 """                
                 # This is the line that's likely failing
