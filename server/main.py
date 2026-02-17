@@ -17,7 +17,7 @@ REDIRECT_URI = os.getenv("SPOTIFY_REDIRECT_URI", "http://127.0.0.1:8000/callback
 CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
 CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
 GEMINI_KEY = os.getenv("GEMINI_API_KEY")
-
+FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:5173")
 # --- 2. CONFIGURE AI ---
 if GEMINI_KEY:
     genai.configure(api_key=GEMINI_KEY)
@@ -77,8 +77,7 @@ async def callback(code: str):
         return {"error": "Token failed", "details": res_data}
 
     # Redirecting to /connect so your React logic can catch the token
-    return RedirectResponse(url=f"http://localhost:5173/connect?token={access_token}")
-
+    return RedirectResponse(url=f"{FRONTEND_URL}/connect?token={access_token}")
 @app.get("/get-stats")
 async def get_stats(token: str):
     headers = {"Authorization": f"Bearer {token}"}
